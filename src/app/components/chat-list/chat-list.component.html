@@ -1,0 +1,13 @@
+<main>
+    <h1>Chats</h1>
+    <div *ngFor="let chat of chats">
+      <h3>id del chat: {{chat._id}} </h3>
+      <p>Usuario 1: {{chat.id_user_1}} </p>
+      <p>Usuario 2: {{chat.id_user_2}} </p>
+      <button (click)="selectChat(chat._id)">Abrir</button>
+    </div>
+    <h1>Messages</h1>
+    <div>
+      <app-chat-messages *ngIf="open_chat" [id_chat]="chat_selected" [id_user]="user_id"></app-chat-messages>
+    </div>
+</main>

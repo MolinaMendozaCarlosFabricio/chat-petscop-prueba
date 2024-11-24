@@ -1,0 +1,16 @@
+<main>
+    <div *ngFor="let message of messages">
+        <p>ID del user: {{message.id_user}} </p>
+        <p> {{message.body_message}} </p>
+        <button (click)="editMessage(message)">Editar</button>
+        <button (click)="deleteMessage(message._id)">Eliminar</button>
+    </div>
+
+    <div>
+        <input type="text" [(ngModel)]="body">
+        <button (click)="sendMessage()">Enviar</button>
+
+        <h3>Editar mensaje</h3>
+        <input [(ngModel)]="edit_body" type="text">
+    </div>
+</main>
